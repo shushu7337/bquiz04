@@ -69,13 +69,13 @@ class DB{
     }
 
     public function save($arg){
-        if(!epmty($arg['id'])){
+        if(!empty($arg['id'])){
             foreach($arg as $key => $value){
                 if($key!='id'){
                     $tmp[]=sprintf("`%s`='%s'",$key,$value);
                 }
             }
-            $sql="UPDATE　$this->table SET ".impldo(",",$tmp)." where `id`='".$arg['id']."'";
+            $sql="UPDATE $this->table SET ".implode(",",$tmp)." where `id`='".$arg['id']."'";
         }else{
             $sql="INSERT INTO $this->table (`".implode("`,`",array_keys($arg))."`) VALUES('".implode("','",$arg)."')";
         }
@@ -91,6 +91,12 @@ function to($url){
     header("location:$url");
 }
 
+$Admin=new DB("admin");
+$Member=new DB("member");
+$Goods=new DB("goods");
+$Type=new DB("type");
+$Ord=new DB("ord");
+$Bottom=new DB("bottom");
 
-
+$bottom=$Bottom->find(1);
 ?>

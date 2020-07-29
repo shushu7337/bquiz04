@@ -1,3 +1,4 @@
+<?php include_once "base.php"?>
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0039) -->
@@ -8,6 +9,7 @@
 
     <title>┌精品電子商務網站」</title>
     <link href="./css/css.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-1.9.1.min.js"></script>
     <script src="./js/js.js"></script>
 </head>
 
@@ -15,7 +17,7 @@
     <iframe name="back" style="display:none;"></iframe>
     <div id="main">
         <div id="top">
-            <a href="?">
+            <a href="index.php">
                 <img src="./icon/0416.jpg">
             </a>
             <div style="padding:10px;">
@@ -26,7 +28,7 @@
                 <a href="?do=login">會員登入</a> |
                 <a href="?do=admin">管理登入</a>
             </div>
-            情人節特惠活動 &nbsp; 為了慶祝七夕情人節，將舉辦情人兩人到現場有七七折之特惠活動~
+            <marquee>情人節特惠活動&nbsp; 年終特賣會開跑了</marquee>
         </div>
         <div id="left" class="ct">
             <div style="min-height:400px;">
@@ -50,7 +52,7 @@
                 ?>
         </div>
         <div id="bottom" style="line-height:70px;background:url(icon/bot.png); color:#FFF;" class="ct">
-            頁尾版權 : </div>
+           <?=$bottom['bottom'];?></div>
     </div>
 
 </body>
