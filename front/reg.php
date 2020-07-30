@@ -35,7 +35,7 @@ function chk_acc(){
     let acc=$("#acc").val();
     $.get("api/chk_acc.php",{acc},function(re){
         // 當回傳值為1 或帳號為admine時皆不允許註冊
-        if(re==1 || acc=='admin'){
+        if(re=='1' || acc=='admin'){
             alert("該帳號已被註冊，請使用其他帳號註冊");
         }else{
             alert("此帳號可使用")
@@ -46,11 +46,11 @@ function chk_acc(){
 
 function reg(){
     let 
-        acc=$("#acc").val();
-        name=$("#name").val();
-        pw=$("#pw").val();
-        addr=$("#addr").val();
-        email=$("#email").val();
+        acc=$("#acc").val(),
+        name=$("#name").val(),
+        pw=$("#pw").val(),
+        addr=$("#addr").val(),
+        email=$("#email").val(),
         tel=$("#tel").val();
 
     // 未避免非同步問題，再次檢查註冊的帳號
