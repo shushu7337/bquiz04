@@ -17,7 +17,16 @@ $admin=$Admin->find($_GET['id']);
             <td class="tt ct">權限</td>
             <td class="pp">
             <?php
-                $adpr=unserialize($admin['pr']);    //將原本被轉為字串的陣列的復原成陣列
+            
+                           
+            $adpr=unserialize($admin['pr']);    //將原本被轉為字串的陣列的復原成陣列
+            
+            if($adpr!=""){
+                $adpr;
+            }else
+                $adpr=[];
+            
+            // print($admin['pr']);
             ?>
                 <!-- in_array(X,陣列) 在陣列中若有x的話就給他checked -->
                 <div><input type="checkbox" name="pr[]" value="1" <?=(in_array(1,$adpr))?"checked":""?>>商品分類與管理</div>
