@@ -9,7 +9,7 @@
 
     <title>┌精品電子商務網站」</title>
     <link href="./css/css.css" rel="stylesheet" type="text/css">
-    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="./js/jquery-1.9.1.min.js"></script>
     <script src="./js/js.js"></script>
 </head>
 
