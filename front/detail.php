@@ -28,7 +28,7 @@ $goods=$Goods->find($_GET['id']);
         let 
             id=$("#id").val(),
             qt=$("#qt").val();
-        location.href=`?do=login&id=${id}&qt=${qt}`;
+        location.href=`?do=buycart&id=${id}&qt=${qt}`;
             
     }
 
