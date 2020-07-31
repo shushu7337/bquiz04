@@ -54,18 +54,18 @@
         <!-- 選單區塊 -->
         <div id="left" class="ct">
             <div style="min-height:400px;">
-            <div class="ww"><a href="">全部商品</a></div>
+            <div class="ww"><a href="">全部商品(<?=$Goods->count(['sh'=>1]);?>)</a></div>
                 <?php
                 // 顯示大分類
                     $bigs=$Type->all(['parent'=>0]);
                     foreach($bigs as $b){
-                        echo "<div class='ww'><a href=''>".$b['name']."</a>";
+                        echo "<div class='ww'><a href=''>".$b['name']."(".$Goods->count(['big'=>$b['id'],'sh'=>1]).")</a>";
                         // 顯示中分類
                         $mids=$Type->all(['parent'=>$b['id']]);
                         if(!empty($mids)){
                             echo "<div class='s'>";
                             foreach($mids as $m){
-                                echo "<a href=''>".$m['name']."</a>";
+                                echo "<a href=''>".$m['name']."(".$Goods->count(['mid'=>$m['id'],'sh'=>1]).")</a>";
                             }
                             echo "</div>";
                         }
