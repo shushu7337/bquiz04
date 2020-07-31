@@ -51,8 +51,28 @@
             </div>
             <marquee>情人節特惠活動&nbsp; 年終特賣會開跑了</marquee>
         </div>
+        <!-- 選單區塊 -->
         <div id="left" class="ct">
             <div style="min-height:400px;">
+            <div class="ww"><a href="">全部商品</a></div>
+                <?php
+                // 顯示大分類
+                    $bigs=$Type->all(['parent'=>0]);
+                    foreach($bigs as $b){
+                        echo "<div class='ww'><a href=''>".$b['name']."</a>";
+                        // 顯示中分類
+                        $mids=$Type->all(['parent'=>$b['id']]);
+                        if(!empty($mids)){
+                            echo "<div class='s'>";
+                            foreach($mids as $m){
+                                echo "<a href=''>".$m['name']."</a>";
+                            }
+                            echo "</div>";
+                        }
+                        echo "</div>";
+                    }
+                ?>
+
             </div>
             <span>
                 <div>進站總人數</div>
