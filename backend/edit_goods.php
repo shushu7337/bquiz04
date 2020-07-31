@@ -63,7 +63,7 @@ $goods=$Goods->find($_GET['id']);
     </table>
 <div class="ct">
     <input type="hidden" name="id" value="<?=$goods['id'];?>">
-    <input type="submit" value="新增">
+    <input type="submit" value="修改">
     <input type="reset" value="重置">
     <input type="button" value="返回">
 </div>
