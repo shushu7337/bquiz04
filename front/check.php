@@ -61,15 +61,24 @@ $mem=$Member->find(['acc'=>$_SESSION['member']]);   //取得session傳來的帳�
 
 <script>
 function buy(){
-    let data={
-        'name':$("#name").val(),
-        'email':$("#email").val(),
-        'tel':$("#tel").val(),
-        'addr':$("#addr").val(),
-    }
-    $.post("api/buy.php",data,function(){   //將資料送去buy後
+
+    // type 1
+    // let data={
+    //     'name':$("#name").val(),
+    //     'email':$("#email").val(),
+    //     'tel':$("#tel").val(),
+    //     'addr':$("#addr").val(),
+    // }
+
+    // type 2
+
+    let data=$("input").serialize();
+
+    $.post("api/buy.php",data,function(res){   //將資料送去api/buy.php後
+
         alert("訂購成功\n感謝您的選購");
-        location.href="index.php";
+        // location.href="index.php";
+        console.log(res);
     })
 }
 

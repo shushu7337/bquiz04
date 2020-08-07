@@ -59,7 +59,7 @@ foreach($_SESSION['cart'] as $id => $qt){
     function delCart(id){
         $.post("api/del_cart.php",{id},function(){
             location.reload();  //如果是用reload的話最後一筆會無法刪除，因為網址列還是帶有最後一項的項目，順序為->刪除->又加入
-            // location.href="?do=buycart";
+            location.href="?do=buycart";
         })
     }
 </script>
